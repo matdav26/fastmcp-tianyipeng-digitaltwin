@@ -18,8 +18,8 @@ if env_file.exists():
                 os.environ[key] = value
 
 # Import after setting environment
-import cv_digital_twin
-from cv_digital_twin import _chat_with_me_impl, load_cv, find_cv_in_docs
+import echo
+from echo import _chat_with_me_impl, load_cv, find_cv_in_docs
 
 def test_cv_loading():
     """Test CV loading functionality."""
@@ -32,7 +32,7 @@ def test_cv_loading():
         print(f"✓ Found CV at: {cv_path}")
         try:
             load_cv(cv_path)
-            cv_content = cv_digital_twin.cv_content
+            cv_content = echo.cv_content
             print(f"✓ CV loaded successfully!")
             print(f"  - File: {cv_path}")
             print(f"  - Content length: {len(cv_content)} characters")
